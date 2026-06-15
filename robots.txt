@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sor-bram.pl/sitemap.xml
