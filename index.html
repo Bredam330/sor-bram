@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serwis i montaż bram automatycznych — Nice, Came, FAAC | Rzeszów i okolice</title>
 <meta name="description" content="Serwis i montaż napędów do bram automatycznych w Rzeszowie i okolicy. Naprawa, diagnostyka i konserwacja napędów Nice, Came, FAAC, BFT, Benincà. Dojazd do klienta, wycena przed naprawą.">
-<meta name="theme-color" content="#0A0A0A">
+<meta name="theme-color" content="#f5f3ef">
 <meta property="og:title" content="Serwis i montaż bram automatycznych — Rzeszów i okolice">
 <meta property="og:description" content="Naprawa i montaż napędów do bram: Nice, Came, FAAC, BFT, Benincà. Dojazd do klienta, wycena przed naprawą.">
 <meta property="og:type" content="website">
@@ -19,18 +19,18 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { font-family: 'Inter', system-ui, sans-serif; background: #f5f3ef; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 
-/* ===== DARK THEME VARS (sections below hero) ===== */
+/* ===== LIGHT THEME VARS ===== */
 :root {
-  --base:#0A0A0A; --panel:#131313; --panel-2:#1A1A1A; --steel:#2E2E2E;
-  --orange:#FF7A1A; --orange-deep:#D95F00; --zinc:#C9D1DA; --muted:#8B95A1;
-  --off:#F4F2EC; --ok:#7BD389;
+  --base:#f8f7f4; --panel:#ffffff; --panel-2:#f0eeea; --steel:#e0dbd4;
+  --orange:#FF7A1A; --orange-deep:#D95F00; --zinc:#374151; --muted:#6b7280;
+  --off:#111827; --ok:#16a34a;
   --display:"Saira Condensed","Arial Narrow",sans-serif;
   --body:"Inter",system-ui,sans-serif;
   --mono:"Space Mono","Courier New",monospace;
   --maxw:1080px;
 }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
-.hazard { height: 14px; background: repeating-linear-gradient(-45deg,var(--orange) 0 20px,#0A0A0A 20px 40px); opacity: .88; }
+.hazard { height: 10px; background: repeating-linear-gradient(-45deg,var(--orange) 0 18px,#f0eeea 18px 36px); opacity: .7; }
 
 /* ===== NAV ===== */
 .nav {
@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: center;
   font-weight: 900; font-size: 16px; color: #fff; letter-spacing: -.5px;
 }
-.nav-logo-text { font-weight: 700; font-size: 16px; color: #111; letter-spacing: -.3px; }
+.nav-logo-text { font-weight: 800; font-size: 17px; color: #111; letter-spacing: .02em; font-family: var(--display); text-transform: uppercase; }
 .nav-logo-text span { color: #FF7A1A; }
 .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #333; }
 .nav-links a:hover { color: #FF7A1A; }
@@ -286,7 +286,7 @@ section.block { padding:58px 0; background:var(--base); color:var(--zinc); font-
 .c-card .v { font-family:var(--display); font-weight:700; font-size:24px; color:var(--orange); letter-spacing:.02em; line-height:1; }
 .c-card .v.sm { font-size:18px; color:var(--off); }
 
-footer { background:#050505; color:var(--muted); font-size:12px; padding:26px 0 110px; }
+footer { background:var(--panel-2); color:var(--muted); font-size:12px; padding:26px 0 110px; border-top:1px solid var(--steel); }
 footer .ph { color:var(--orange); font-family:var(--mono); }
 footer .frow { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:14px; }
 footer .fbrand { font-family:var(--display); font-weight:700; color:var(--off); font-size:18px; letter-spacing:.04em; text-transform:uppercase; display:flex; align-items:center; gap:12px; }
@@ -304,8 +304,16 @@ footer .fbrand svg { height:28px; width:auto; }
 <!-- NAV -->
 <nav class="nav">
   <a href="/" class="nav-logo">
-    <div class="nav-logo-mark">SB</div>
-    <div class="nav-logo-text">Serwis<span>Bram</span></div>
+    <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="40 255 943 516" preserveAspectRatio="xMidYMid meet">
+      <g transform="translate(0,1024) scale(0.1,-0.1)" fill="#FF7A1A" stroke="none">
+        <path d="M4106 7435 c-188 -27 -339 -69 -498 -141 -124 -56 -197 -101 -388 -239 -239 -173 -421 -277 -649 -370 -181 -74 -428 -139 -634 -169 l-82 -11 -3 -233 -2 -232 -95 0 -95 0 0 225 0 225 -45 0 c-50 0 -51 1 -29 35 21 32 29 121 14 174 -15 57 -98 142 -156 159 -117 34 -236 -15 -289 -121 -31 -63 -33 -143 -5 -204 l19 -43 -44 0 -45 0 0 -720 0 -720 290 0 290 0 0 345 0 345 95 0 95 0 0 -345 0 -345 834 0 834 0 57 70 c78 98 120 123 206 128 59 4 77 0 124 -23 61 -29 104 -82 126 -153 6 -23 15 -42 18 -42 5 0 121 373 196 626 42 144 181 218 318 170 l37 -14 0 808 0 808 -22 6 c-49 15 -372 15 -472 1z"/>
+        <path d="M5735 7443 c-16 -2 -45 -6 -62 -9 l-33 -5 0 -769 0 -770 21 0 c50 0 106 -26 149 -70 50 -50 48 -44 188 -505 49 -161 72 -224 77 -210 4 11 20 48 35 82 60 131 211 181 333 110 35 -21 62 -52 119 -137 l73 -109 878 -1 877 0 0 345 0 345 95 0 95 0 0 -345 0 -345 293 0 292 0 0 720 0 720 -42 0 c-47 0 -52 9 -28 50 19 33 19 132 0 177 -35 83 -107 138 -195 150 -175 24 -321 -168 -250 -326 11 -24 20 -45 20 -47 0 -2 -20 -4 -45 -4 l-45 0 0 -225 0 -225 -95 0 -95 0 -2 232 -3 232 -86 12 c-257 37 -572 135 -804 248 -158 78 -345 193 -507 314 -286 213 -529 313 -861 357 -106 13 -313 18 -392 8z"/>
+        <path d="M5095 6690 c-12 -4 -27 -15 -34 -24 -7 -8 -32 -127 -56 -263 -24 -136 -51 -288 -60 -338 -8 -49 -33 -189 -55 -310 -21 -121 -64 -364 -95 -540 -31 -176 -58 -321 -60 -323 -2 -2 -20 68 -40 155 -107 455 -144 596 -159 611 -20 20 -87 22 -110 3 -16 -13 -24 -38 -171 -521 -189 -619 -189 -621 -198 -609 -2 2 -36 96 -77 209 -40 113 -82 229 -93 259 -25 68 -48 91 -91 91 -37 0 -81 -41 -165 -152 l-43 -58 -1445 0 c-900 0 -1451 -4 -1462 -10 -10 -5 -24 -23 -31 -40 -15 -36 0 -84 34 -103 19 -11 566 -13 2835 -7 l144 0 53 57 53 58 10 -28 c6 -15 56 -154 112 -310 107 -299 122 -327 179 -327 16 0 40 10 54 23 25 22 35 56 289 904 29 95 55 169 58 165 3 -4 29 -110 58 -237 100 -436 140 -588 161 -609 27 -27 84 -27 112 1 18 19 36 106 129 625 59 332 119 673 135 758 15 85 30 158 34 163 3 4 14 -73 23 -170 88 -922 191 -1923 201 -1943 15 -34 59 -54 93 -43 56 19 59 31 123 493 108 787 133 960 136 957 4 -3 49 -149 204 -652 108 -349 120 -375 176 -375 44 0 78 47 114 155 81 247 173 505 179 505 3 0 28 -34 55 -76 27 -41 56 -79 65 -83 9 -5 702 -11 1541 -12 1428 -4 1528 -3 1552 13 47 31 45 113 -2 138 -15 8 -437 12 -1513 13 l-1491 2 -86 129 c-106 158 -140 181 -195 134 -25 -23 -43 -70 -168 -435 -23 -67 -44 -119 -48 -115 -3 4 -32 90 -63 192 -283 917 -278 901 -308 923 -24 18 -32 19 -66 9 -28 -9 -43 -20 -51 -40 -6 -15 -38 -227 -72 -472 -81 -597 -85 -627 -92 -610 -3 8 -26 236 -52 505 -26 270 -71 728 -100 1019 l-52 530 -27 23 c-28 24 -47 27 -81 13z"/>
+        <path d="M1080 3938 l0 -617 290 0 290 1 0 614 0 613 -290 3 -290 3 0 -617z"/>
+        <path d="M8580 3938 l0 -618 288 6 c158 4 288 7 289 8 2 2 5 1016 3 1183 l0 32 -290 3 -290 3 0 -617z"/>
+      </g>
+    </svg>
+    <div class="nav-logo-text">SOR-<span>BRAM</span></div>
   </a>
   <div class="nav-links">
     <a href="#uslugi">Usługi</a>
@@ -562,7 +570,6 @@ footer .fbrand svg { height:28px; width:auto; }
     <div class="frow">
       <span class="fbrand">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="40 255 943 516" preserveAspectRatio="xMidYMid meet">
-          <rect x="40" y="255" width="943" height="516" fill="#050505"/>
           <g transform="translate(0,1024) scale(0.1,-0.1)" fill="#FF7A1A" stroke="none">
             <path d="M4106 7435 c-188 -27 -339 -69 -498 -141 -124 -56 -197 -101 -388 -239 -239 -173 -421 -277 -649 -370 -181 -74 -428 -139 -634 -169 l-82 -11 -3 -233 -2 -232 -95 0 -95 0 0 225 0 225 -45 0 c-50 0 -51 1 -29 35 21 32 29 121 14 174 -15 57 -98 142 -156 159 -117 34 -236 -15 -289 -121 -31 -63 -33 -143 -5 -204 l19 -43 -44 0 -45 0 0 -720 0 -720 290 0 290 0 0 345 0 345 95 0 95 0 0 -345 0 -345 834 0 834 0 57 70 c78 98 120 123 206 128 59 4 77 0 124 -23 61 -29 104 -82 126 -153 6 -23 15 -42 18 -42 5 0 121 373 196 626 42 144 181 218 318 170 l37 -14 0 808 0 808 -22 6 c-49 15 -372 15 -472 1z"/>
             <path d="M5735 7443 c-16 -2 -45 -6 -62 -9 l-33 -5 0 -769 0 -770 21 0 c50 0 106 -26 149 -70 50 -50 48 -44 188 -505 49 -161 72 -224 77 -210 4 11 20 48 35 82 60 131 211 181 333 110 35 -21 62 -52 119 -137 l73 -109 878 -1 877 0 0 345 0 345 95 0 95 0 0 -345 0 -345 293 0 292 0 0 720 0 720 -42 0 c-47 0 -52 9 -28 50 19 33 19 132 0 177 -35 83 -107 138 -195 150 -175 24 -321 -168 -250 -326 11 -24 20 -45 20 -47 0 -2 -20 -4 -45 -4 l-45 0 0 -225 0 -225 -95 0 -95 0 -2 232 -3 232 -86 12 c-257 37 -572 135 -804 248 -158 78 -345 193 -507 314 -286 213 -529 313 -861 357 -106 13 -313 18 -392 8z"/>
@@ -570,7 +577,7 @@ footer .fbrand svg { height:28px; width:auto; }
             <path d="M8580 3938 l0 -618 288 6 c158 4 288 7 289 8 2 2 5 1016 3 1183 l0 32 -290 3 -290 3 0 -617z"/>
           </g>
         </svg>
-        Serwis Bram · Rzeszów
+        SOR-BRAM · Rzeszów
       </span>
       <span>Telefon: <span class="ph">[ 513 960 096 ]</span></span>
     </div>
