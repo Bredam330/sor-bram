@@ -191,9 +191,7 @@ h1 em { font-style: normal; color: #FF7A1A; }
 .gate-wing-left  .latch { right:5px; }
 .gate-wing-right .latch { left:5px; }
 
-.behind-gate { position:absolute; bottom:155px; width:270px; height:256px; display:flex; align-items:center; justify-content:center; z-index:20; pointer-events:none; }
-.behind-gate-left  { right:calc(50%); }
-.behind-gate-right { left:calc(50%); }
+.behind-gate-center { position:absolute; bottom:155px; left:calc(50% - 270px); width:540px; height:256px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; z-index:20; pointer-events:none; }
 .behind-gate-text { font-weight:900; font-size:32px; letter-spacing:.22em; text-transform:uppercase; color:#FF7A1A; text-shadow:0 0 20px rgba(255,122,26,.7),0 0 50px rgba(255,122,26,.3),0 2px 8px rgba(0,0,0,.4); opacity:0; transform:scale(.9); transition:opacity .5s ease .3s, transform .5s ease .3s; }
 .behind-gate-text.visible { opacity:1; transform:scale(1); }
 
@@ -410,10 +408,8 @@ footer .fbrand svg { height:28px; width:auto; }
     <div class="ps ps-l"></div>
     <div class="ps ps-r"></div>
 
-    <div class="behind-gate behind-gate-left">
+    <div class="behind-gate-center">
       <div class="behind-gate-text" id="txt-serwis">Serwis</div>
-    </div>
-    <div class="behind-gate behind-gate-right">
       <div class="behind-gate-text" id="txt-montaz">Montaż</div>
     </div>
 
