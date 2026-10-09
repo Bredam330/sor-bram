@@ -153,10 +153,10 @@ h1 em { font-style: normal; color: #FF7A1A; }
 .gate-wing-left  { right:calc(50%); transform-origin:left center; }
 .gate-wing-right { left:calc(50%);  transform-origin:right center; }
 
-@keyframes openOnce  { 0%{transform:rotateY(0deg)}   25%{transform:rotateY(74deg)}   70%{transform:rotateY(74deg)}   100%{transform:rotateY(0deg)} }
-@keyframes openOnceR { 0%{transform:rotateY(0deg)}   25%{transform:rotateY(-74deg)}  70%{transform:rotateY(-74deg)}  100%{transform:rotateY(0deg)} }
-.gate-wing-left.animate  { animation: openOnce  6s cubic-bezier(.4,0,.2,1) 1.2s 1 both; }
-.gate-wing-right.animate { animation: openOnceR 6s cubic-bezier(.4,0,.2,1) 1.2s 1 both; }
+@keyframes openOnce  { from{transform:rotateY(0deg)}  to{transform:rotateY(74deg)} }
+@keyframes openOnceR { from{transform:rotateY(0deg)}  to{transform:rotateY(-74deg)} }
+.gate-wing-left.animate  { animation: openOnce  1.8s cubic-bezier(.4,0,.2,1) 1.2s 1 forwards; }
+.gate-wing-right.animate { animation: openOnceR 1.8s cubic-bezier(.4,0,.2,1) 1.2s 1 forwards; }
 
 .wing-front {
   position:absolute; inset:0;
@@ -610,7 +610,7 @@ const txtS = document.getElementById('txt-serwis');
 const txtM = document.getElementById('txt-montaz');
 
 const ANIM_DELAY = 1200;
-const ANIM_DUR   = 6000;
+const ANIM_DUR   = 1800;
 const start = performance.now() + ANIM_DELAY;
 
 function ease(t) { return t < 0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
@@ -629,22 +629,18 @@ function drawShadow(progress) {
 }
 
 let textShown = false;
-let textHidden = false;
 
 function tick(now) {
   const elapsed = now - start;
   if (elapsed < 0) { requestAnimationFrame(tick); return; }
-  let progress = 0;
-  if (elapsed < ANIM_DUR) {
-    const t = elapsed / ANIM_DUR;
-    if (t < 0.25)      progress = ease(t / 0.25);
-    else if (t < 0.70) progress = 1;
-    else               progress = 1 - ease((t - 0.70) / 0.30);
-  }
+  const progress = elapsed >= ANIM_DUR ? 1 : ease(elapsed / ANIM_DUR);
   drawShadow(progress);
-  if (progress > 0.5 && !textShown)  { txtS.classList.add('visible');    txtM.classList.add('visible');    textShown  = true; }
-  if (progress < 0.5 && textShown && !textHidden) { txtS.classList.remove('visible'); txtM.classList.remove('visible'); textHidden = true; }
-  if (elapsed < ANIM_DUR) requestAnimationFrame(tick);
+  if (progress > 0.5 && !textShown) {
+    txtS.classList.add('visible');
+    txtM.classList.add('visible');
+    textShown = true;
+  }
+  if (progress < 1) requestAnimationFrame(tick);
 }
 requestAnimationFrame(tick);
 </script>
