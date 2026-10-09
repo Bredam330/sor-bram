@@ -192,7 +192,7 @@ h1 em { font-style: normal; color: #FF7A1A; }
 .gate-wing-right .latch { left:5px; }
 
 .behind-gate-center { position:absolute; bottom:155px; left:calc(50% - 270px); width:540px; height:256px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; z-index:20; pointer-events:none; }
-.behind-gate-text { font-weight:900; font-size:32px; letter-spacing:.22em; text-transform:uppercase; color:#FF7A1A; text-shadow:0 0 20px rgba(255,122,26,.7),0 0 50px rgba(255,122,26,.3),0 2px 8px rgba(0,0,0,.4); opacity:0; transform:scale(.9); transition:opacity .5s ease .3s, transform .5s ease .3s; }
+.behind-gate-text { font-weight:900; font-size:20px; letter-spacing:.18em; text-transform:uppercase; color:#FF7A1A; text-shadow:0 0 16px rgba(255,122,26,.7),0 0 40px rgba(255,122,26,.3),0 2px 6px rgba(0,0,0,.4); opacity:0; transform:scale(.9); transition:opacity .5s ease .3s, transform .5s ease .3s; }
 .behind-gate-text.visible { opacity:1; transform:scale(1); }
 
 .ps { position:absolute; bottom:155px; background:linear-gradient(180deg,#4a4e52 0%,#3a3e42 45%,#32363a 100%); border-radius:2px 2px 0 0; box-shadow:inset -3px 0 8px rgba(0,0,0,.3),2px 0 10px rgba(0,0,0,.25); }
@@ -409,8 +409,10 @@ footer .fbrand svg { height:28px; width:auto; }
     <div class="ps ps-r"></div>
 
     <div class="behind-gate-center">
-      <div class="behind-gate-text" id="txt-serwis">Serwis</div>
-      <div class="behind-gate-text" id="txt-montaz">Montaż</div>
+      <div class="behind-gate-text" id="txt-1">Bramy Wjazdowe</div>
+      <div class="behind-gate-text" id="txt-2">Bramy Garażowe</div>
+      <div class="behind-gate-text" id="txt-3">Domofony</div>
+      <div class="behind-gate-text" id="txt-4">Kamery CCTV</div>
     </div>
 
     <div class="gate-wing gate-wing-left animate" style="z-index:10;">
@@ -602,8 +604,7 @@ const canvas = document.getElementById('gate-shadow');
 const ctx = canvas.getContext('2d');
 canvas.style.cssText = 'position:absolute;bottom:0;left:50%;transform:translateX(-50%);pointer-events:none;';
 
-const txtS = document.getElementById('txt-serwis');
-const txtM = document.getElementById('txt-montaz');
+const labels = ['txt-1','txt-2','txt-3','txt-4'].map(id => document.getElementById(id));
 
 const ANIM_DELAY = 1200;
 const ANIM_DUR   = 1800;
@@ -632,8 +633,7 @@ function tick(now) {
   const progress = elapsed >= ANIM_DUR ? 1 : ease(elapsed / ANIM_DUR);
   drawShadow(progress);
   if (progress > 0.5 && !textShown) {
-    txtS.classList.add('visible');
-    txtM.classList.add('visible');
+    labels.forEach(el => el.classList.add('visible'));
     textShown = true;
   }
   if (progress < 1) requestAnimationFrame(tick);
