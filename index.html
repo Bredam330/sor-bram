@@ -3,15 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serwis i montaż bram automatycznych — Nice, Came, FAAC | Rzeszów i okolice</title>
-<meta name="description" content="Serwis i montaż napędów do bram automatycznych w Rzeszowie i okolicy. Naprawa, diagnostyka i konserwacja napędów Nice, Came, FAAC, BFT, Benincà. Dojazd do klienta, wycena przed naprawą.">
+<title>Serwis bram garażowych, domofony, kamery Rzeszów | SOR-BRAM</title>
+<meta name="description" content="Naprawa i serwis bram garażowych, montaż domofonów i kamer, serwis napędów bram w Rzeszowie i okolicach. Dojazd do klienta, wycena przed pracą. Tel. 513 960 096.">
 <meta name="theme-color" content="#f5f3ef">
-<meta property="og:title" content="Serwis i montaż bram automatycznych — Rzeszów i okolice">
-<meta property="og:description" content="Naprawa i montaż napędów do bram: Nice, Came, FAAC, BFT, Benincà. Dojazd do klienta, wycena przed naprawą.">
+<meta property="og:title" content="Serwis bram garażowych, domofony, kamery Rzeszów | SOR-BRAM">
+<meta property="og:description" content="Naprawa i serwis bram garażowych, montaż domofonów i kamer, serwis napędów bram w Rzeszowie i okolicach. Dojazd do klienta, wycena przed pracą.">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://sor-bram.pl/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Ads — uzupełnij [AW-ID] i [ETYKIETA] w panelu Google Ads (Cele → Konwersje) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=[AW-ID]"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '[AW-ID]');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="tel:"]');
+    if (a) gtag('event', 'conversion', {'send_to': '[AW-ID]/[ETYKIETA]'});
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "SOR-BRAM",
+  "url": "https://sor-bram.pl/",
+  "telephone": "+48513960096",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rzeszów",
+    "addressRegion": "podkarpackie",
+    "addressCountry": "PL"
+  },
+  "areaServed": [
+    "Rzeszów","Boguchwała","Tyczyn","Głogów Małopolski",
+    "Trzebownisko","Świlcza","Krasne","Łańcut",
+    "Czarna","Chmielnik","Błażowa","Sokołów Małopolski"
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  }],
+  "sameAs": ["[DO UZUPEŁNIENIA: link do profilu Google Moja Firma]"]
+}
+</script>
+
 <style>
 /* ===== RESET ===== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,8 +91,8 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-logo-text { font-weight: 800; font-size: 17px; color: #111; letter-spacing: .02em; font-family: var(--display); text-transform: uppercase; }
 .nav-logo-text span { color: #FF7A1A; }
-.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #333; }
-.nav-links a:hover { color: #FF7A1A; }
+.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: #333; align-items: center; }
+.nav-links > a:hover { color: #FF7A1A; }
 .nav-phone {
   display: flex; align-items: center; gap: 8px;
   background: #FF7A1A; color: #fff; font-weight: 600; font-size: 15px;
@@ -58,6 +101,29 @@ a { color: inherit; text-decoration: none; }
 .nav-phone:hover { background: #e06800; }
 .nav-phone svg { flex-shrink: 0; }
 @media(max-width:760px){ .nav-links { display: none; } }
+
+/* Nav dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: 10px; color: #999; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #fff; border: 1px solid #e0dbd4; border-radius: 8px;
+  padding: 6px 0; min-width: 270px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 9px 18px; font-size: 13px; color: #333; white-space: nowrap;
+}
+.nav-dropdown-menu a:hover { color: #FF7A1A; background: #fef9f5; }
 
 /* ===== HERO ===== */
 .hero {
@@ -89,7 +155,7 @@ a { color: inherit; text-decoration: none; }
   padding: 6px 14px; border-radius: 40px; margin-bottom: 22px;
 }
 .eyebrow-dot { width: 6px; height: 6px; background: #FF7A1A; border-radius: 50%; }
-h1 { font-size: clamp(38px,6.5vw,76px); font-weight: 900; color: #111827; line-height: 1.0; letter-spacing: -.03em; margin-bottom: 16px; }
+h1 { font-size: clamp(28px,5vw,62px); font-weight: 900; color: #111827; line-height: 1.0; letter-spacing: -.03em; margin-bottom: 16px; }
 h1 em { font-style: normal; color: #FF7A1A; }
 .sub { font-size: clamp(15px,2vw,19px); color: #6b7280; font-weight: 400; max-width: 520px; line-height: 1.55; margin-bottom: 34px; }
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
@@ -232,7 +298,7 @@ h1 em { font-style: normal; color: #FF7A1A; }
 
 #gate-shadow { position:absolute; bottom:0; left:50%; transform:translateX(-50%); pointer-events:none; z-index:1; }
 
-/* ===== DARK SECTIONS ===== */
+/* ===== SECTIONS ===== */
 section.block { padding:58px 0; background:var(--base); color:var(--zinc); font-family:var(--body); }
 .cover { background:var(--panel-2); color:var(--zinc); font-family:var(--body); padding:40px 0; }
 .sec-label { font-family:var(--mono); font-size:11px; letter-spacing:.3em; color:var(--orange-deep); text-transform:uppercase; margin-bottom:12px; }
@@ -247,10 +313,12 @@ section.block { padding:58px 0; background:var(--base); color:var(--zinc); font-
 .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--steel); border:1px solid var(--steel); }
 @media(max-width:820px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
-.svc { background:var(--base); padding:24px 22px; }
+.svc { background:var(--base); padding:24px 22px; display:flex; flex-direction:column; }
 .svc svg { width:30px; height:30px; color:var(--orange); margin-bottom:13px; display:block; }
 .svc h3 { font-family:var(--display); font-weight:600; font-size:21px; color:var(--off); margin-bottom:6px; line-height:1.05; }
-.svc p  { font-size:13.5px; color:var(--muted); }
+.svc p  { font-size:13.5px; color:var(--muted); flex:1; }
+.svc-link { display:inline-block; margin-top:14px; color:var(--orange); font-size:13px; font-weight:600; letter-spacing:.03em; }
+.svc-link:hover { color:var(--orange-deep); }
 
 .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
 @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
@@ -274,6 +342,27 @@ section.block { padding:58px 0; background:var(--base); color:var(--zinc); font-
 
 .area-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
 .area-tags span { font-family:var(--mono); font-size:13px; color:var(--zinc); border:1px solid var(--steel); padding:5px 12px; }
+
+/* ===== FAQ ===== */
+.faq-list { display:grid; gap:0; }
+.faq-item { border-bottom:1px solid var(--steel); padding:20px 0; }
+.faq-item:first-child { border-top:1px solid var(--steel); }
+.faq-q { font-family:var(--display); font-weight:600; font-size:20px; color:var(--off); margin-bottom:8px; line-height:1.15; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+.faq-q::after { content:'+'; font-size:26px; color:var(--orange); flex-shrink:0; line-height:1; font-weight:300; margin-top:-2px; }
+.faq-item.open .faq-q::after { content:'−'; }
+.faq-a { font-size:14px; color:var(--muted); line-height:1.65; display:none; max-width:680px; }
+.faq-item.open .faq-a { display:block; }
+
+/* ===== REVIEWS ===== */
+.reviews-box { background:var(--panel); border-left:3px solid var(--orange); padding:34px; border-radius:2px; text-align:center; }
+.reviews-box p { color:var(--muted); font-size:14px; line-height:1.6; margin-bottom:24px; max-width:560px; margin-left:auto; margin-right:auto; }
+.reviews-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn-outline {
+  display:inline-flex; align-items:center; gap:8px;
+  border:1.5px solid var(--orange); color:var(--orange); font-weight:600; font-size:15px;
+  padding:12px 22px; border-radius:6px; transition:all .2s;
+}
+.btn-outline:hover { background:var(--orange); color:#fff; }
 
 .contact { background:linear-gradient(180deg,var(--orange) 0%,var(--orange-deep) 100%); color:#0A0A0A; }
 .contact .wrap { padding:52px 22px; }
@@ -308,7 +397,7 @@ footer .fbrand svg { height:28px; width:auto; }
       <g transform="translate(0,1024) scale(0.1,-0.1)" fill="#FF7A1A" stroke="none">
         <path d="M4106 7435 c-188 -27 -339 -69 -498 -141 -124 -56 -197 -101 -388 -239 -239 -173 -421 -277 -649 -370 -181 -74 -428 -139 -634 -169 l-82 -11 -3 -233 -2 -232 -95 0 -95 0 0 225 0 225 -45 0 c-50 0 -51 1 -29 35 21 32 29 121 14 174 -15 57 -98 142 -156 159 -117 34 -236 -15 -289 -121 -31 -63 -33 -143 -5 -204 l19 -43 -44 0 -45 0 0 -720 0 -720 290 0 290 0 0 345 0 345 95 0 95 0 0 -345 0 -345 834 0 834 0 57 70 c78 98 120 123 206 128 59 4 77 0 124 -23 61 -29 104 -82 126 -153 6 -23 15 -42 18 -42 5 0 121 373 196 626 42 144 181 218 318 170 l37 -14 0 808 0 808 -22 6 c-49 15 -372 15 -472 1z"/>
         <path d="M5735 7443 c-16 -2 -45 -6 -62 -9 l-33 -5 0 -769 0 -770 21 0 c50 0 106 -26 149 -70 50 -50 48 -44 188 -505 49 -161 72 -224 77 -210 4 11 20 48 35 82 60 131 211 181 333 110 35 -21 62 -52 119 -137 l73 -109 878 -1 877 0 0 345 0 345 95 0 95 0 0 -345 0 -345 293 0 292 0 0 720 0 720 -42 0 c-47 0 -52 9 -28 50 19 33 19 132 0 177 -35 83 -107 138 -195 150 -175 24 -321 -168 -250 -326 11 -24 20 -45 20 -47 0 -2 -20 -4 -45 -4 l-45 0 0 -225 0 -225 -95 0 -95 0 -2 232 -3 232 -86 12 c-257 37 -572 135 -804 248 -158 78 -345 193 -507 314 -286 213 -529 313 -861 357 -106 13 -313 18 -392 8z"/>
-        <path d="M5095 6690 c-12 -4 -27 -15 -34 -24 -7 -8 -32 -127 -56 -263 -24 -136 -51 -288 -60 -338 -8 -49 -33 -189 -55 -310 -21 -121 -64 -364 -95 -540 -31 -176 -58 -321 -60 -323 -2 -2 -20 68 -40 155 -107 455 -144 596 -159 611 -20 20 -87 22 -110 3 -16 -13 -24 -38 -171 -521 -189 -619 -189 -621 -198 -609 -2 2 -36 96 -77 209 -40 113 -82 229 -93 259 -25 68 -48 91 -91 91 -37 0 -81 -41 -165 -152 l-43 -58 -1445 0 c-900 0 -1451 -4 -1462 -10 -10 -5 -24 -23 -31 -40 -15 -36 0 -84 34 -103 19 -11 566 -13 2835 -7 l144 0 53 57 53 58 10 -28 c6 -15 56 -154 112 -310 107 -299 122 -327 179 -327 16 0 40 10 54 23 25 22 35 56 289 904 29 95 55 169 58 165 3 -4 29 -110 58 -237 100 -436 140 -588 161 -609 27 -27 84 -27 112 1 18 19 36 106 129 625 59 332 119 673 135 758 15 85 30 158 34 163 3 4 14 -73 23 -170 88 -922 191 -1923 201 -1943 15 -34 59 -54 93 -43 56 19 59 31 123 493 108 787 133 960 136 957 4 -3 49 -149 204 -652 108 -349 120 -375 176 -375 44 0 78 47 114 155 81 247 173 505 179 505 3 0 28 -34 55 -76 27 -41 56 -79 65 -83 9 -5 702 -11 1541 -12 1428 -4 1528 -3 1552 13 47 31 45 113 -2 138 -15 8 -437 12 -1513 13 l-1491 2 -86 129 c-106 158 -140 181 -195 134 -25 -23 -43 -70 -168 -435 -23 -67 -44 -119 -48 -115 -3 4 -32 90 -63 192 -283 917 -278 901 -308 923 -24 18 -32 19 -66 9 -28 -9 -43 -20 -51 -40 -6 -15 -38 -227 -72 -472 -81 -597 -85 -627 -92 -610 -3 8 -26 236 -52 505 -26 270 -71 728 -100 1019 l-52 530 -27 23 c-28 24 -47 27 -81 13z"/>
+        <path d="M5095 6690 c-12 -4 -27 -15 -34 -24 c-7 -8 -32 -127 -56 -263 c-24 -136 -51 -288 -60 -338 c-8 -49 -33 -189 -55 -310 c-21 -121 -64 -364 -95 -540 c-31 -176 -58 -321 -60 -323 c-2 -2 -20 68 -40 155 c-107 455 -144 596 -159 611 c-20 20 -87 22 -110 3 c-16 -13 -24 -38 -171 -521 c-189 -619 -189 -621 -198 -609 c-2 2 -36 96 -77 209 c-40 113 -82 229 -93 259 c-25 68 -48 91 -91 91 c-37 0 -81 -41 -165 -152 l-43 -58 -1445 0 c-900 0 -1451 -4 -1462 -10 c-10 -5 -24 -23 -31 -40 c-15 -36 0 -84 34 -103 c19 -11 566 -13 2835 -7 l144 0 53 57 53 58 10 -28 c6 -15 56 -154 112 -310 c107 -299 122 -327 179 -327 c16 0 40 10 54 23 c25 22 35 56 289 904 c29 95 55 169 58 165 c3 -4 29 -110 58 -237 c100 -436 140 -588 161 -609 c27 -27 84 -27 112 1 c18 19 36 106 129 625 c59 332 119 673 135 758 c15 85 30 158 34 163 c3 4 14 -73 23 -170 c88 -922 191 -1923 201 -1943 c15 -34 59 -54 93 -43 c56 19 59 31 123 493 c108 787 133 960 136 957 c4 -3 49 -149 204 -652 c108 -349 120 -375 176 -375 c44 0 78 47 114 155 c81 247 173 505 179 505 c3 0 28 -34 55 -76 c27 -41 56 -79 65 -83 c9 -5 702 -11 1541 -12 c1428 -4 1528 -3 1552 13 c47 31 45 113 -2 138 c-15 8 -437 12 -1513 13 l-1491 2 -86 129 c-106 158 -140 181 -195 134 c-25 -23 -43 -70 -168 -435 c-23 -67 -44 -119 -48 -115 c-3 4 -32 90 -63 192 c-283 917 -278 901 -308 923 c-24 18 -32 19 -66 9 c-28 -9 -43 -20 -51 -40 c-6 -15 -38 -227 -72 -472 c-81 -597 -85 -627 -92 -610 c-3 8 -26 236 -52 505 c-26 270 -71 728 -100 1019 l-52 530 -27 23 c-28 24 -47 27 -81 13z"/>
         <path d="M1080 3938 l0 -617 290 0 290 1 0 614 0 613 -290 3 -290 3 0 -617z"/>
         <path d="M8580 3938 l0 -618 288 6 c158 4 288 7 289 8 2 2 5 1016 3 1183 l0 32 -290 3 -290 3 0 -617z"/>
       </g>
@@ -316,7 +405,15 @@ footer .fbrand svg { height:28px; width:auto; }
     <div class="nav-logo-text">SOR-<span>BRAM</span></div>
   </a>
   <div class="nav-links">
-    <a href="#uslugi">Usługi</a>
+    <div class="nav-dropdown">
+      <a href="#uslugi">Usługi</a>
+      <div class="nav-dropdown-menu">
+        <a href="/naprawa-bram-garazowych-rzeszow/">Naprawa bram garażowych</a>
+        <a href="/montaz-domofonow-rzeszow/">Montaż domofonów</a>
+        <a href="/monitoring-kamery-rzeszow/">Kamery i monitoring</a>
+        <a href="/naped-do-bramy-przesuwnej-z-montazem/">Napęd do bramy przesuwnej</a>
+      </div>
+    </div>
     <a href="#jak">Jak to działa</a>
     <a href="#marki">Marki</a>
     <a href="#obszar">Obszar</a>
@@ -341,8 +438,8 @@ footer .fbrand svg { height:28px; width:auto; }
       <span class="eyebrow-dot"></span>
       Rzeszów i okolice
     </div>
-    <h1>Serwis i montaż<br><em>automatyki bram</em></h1>
-    <p class="sub">Montaż i serwis napędów bram przesuwnych, skrzydłowych i garażowych.<br>Domofony, kamery CCTV, wymiana sprężyn i napędów.</p>
+    <h1>Serwis bram garażowych,<br><em>domofony i kamery</em></h1>
+    <p class="sub">Naprawa bram garażowych, montaż domofonów i monitoringu, serwis automatyki bram.<br>Dojazd do klienta, wycena przed pracą.</p>
 
     <div class="cta-row">
       <a href="tel:+48513960096" class="btn-primary">
@@ -445,15 +542,17 @@ footer .fbrand svg { height:28px; width:auto; }
 <section class="block">
   <div class="wrap">
     <div class="sec-label">Znasz to?</div>
-    <h2 class="sec-title">Najczęstsze problemy z bramą</h2>
+    <h2 class="sec-title">Najczęstsze problemy</h2>
     <div class="problem">
       <ul class="faults">
         <li>Brama nie domyka się albo cofa w połowie drogi</li>
         <li>Napęd buczy, ale skrzydło nie rusza z miejsca</li>
         <li>Piloty i fotokomórki przestały reagować</li>
-        <li>Brama garażowa nie unosi się — zerwana sprężyna</li>
         <li>Po burzy lub przepięciu padła elektronika sterownika</li>
-        <li>Domofon nie działa lub nie otwiera bramy</li>
+        <li>Brama garażowa opada, zacina się albo stoi krzywo</li>
+        <li>Zerwana linka lub hałasujące rolki w bramie segmentowej</li>
+        <li>Domofon nie dzwoni, nie ma obrazu albo nie otwiera furtki</li>
+        <li>Kamery przestały nagrywać lub nie ma podglądu w telefonie</li>
       </ul>
     </div>
   </div>
@@ -465,30 +564,47 @@ footer .fbrand svg { height:28px; width:auto; }
     <div class="sec-label">Zakres usług</div>
     <h2 class="sec-title">Co dla Ciebie zrobię</h2>
     <div class="svc-grid">
-      <div class="svc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><circle cx="12" cy="11" r="1"/></svg>
-        <h3>Montaż bram</h3><p>Bramy przesuwne, skrzydłowe i garażowe — kompleksowy montaż z automatyką.</p>
-      </div>
+
       <div class="svc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 3 3 6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/></svg>
-        <h3>Serwis i naprawa</h3><p>Diagnostyka i naprawa napędów — silnik, sterownik, przekładnia, elektronika.</p>
+        <h3>Naprawa i serwis bram garażowych</h3>
+        <p>Wymiana sprężyn, linek, rolek i napędów. Bramy segmentowe i uchylne — Hörmann, Wiśniowski i inne marki.</p>
+        <a class="svc-link" href="/naprawa-bram-garazowych-rzeszow/">Więcej →</a>
       </div>
-      <div class="svc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
-        <h3>Konserwacja bram garażowych</h3><p>Przegląd, smarowanie, regulacja siły i krańców pracy — przedłuż żywotność napędu.</p>
-      </div>
-      <div class="svc">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        <h3>Wymiana sprężyn i napędów</h3><p>Wymiana zużytych sprężyn skręcanych i naciągowych oraz całych napędów bram garażowych.</p>
-      </div>
+
       <div class="svc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        <h3>Montaż domofonów</h3><p>Domofony przewodowe i bezprzewodowe — montaż, konfiguracja, integracja z bramą.</p>
+        <h3>Domofony i wideodomofony</h3>
+        <p>Montaż i naprawa domofonów przewodowych i bezprzewodowych. Integracja z bramą wjazdową i furtką, elektrozaczepy.</p>
+        <a class="svc-link" href="/montaz-domofonow-rzeszow/">Więcej →</a>
       </div>
+
       <div class="svc">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <h3>Kamery CCTV</h3><p>Montaż kamer monitoringu przy bramach i wjazdach — analog i IP.</p>
+        <h3>Kamery i monitoring</h3>
+        <p>Montaż kamer IP i analogowych przy bramach, wjazdach i posesjach. Podgląd w telefonie, serwis i naprawa.</p>
+        <a class="svc-link" href="/monitoring-kamery-rzeszow/">Więcej →</a>
       </div>
+
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><circle cx="12" cy="11" r="1"/></svg>
+        <h3>Napęd do bramy przesuwnej z montażem</h3>
+        <p>Dobór i montaż napędu do bramy przesuwnej — listwa zębata, fotokomórki, piloty, programowanie. Nice, FAAC, Came, BFT, Benincà.</p>
+        <a class="svc-link" href="/naped-do-bramy-przesuwnej-z-montazem/">Więcej →</a>
+      </div>
+
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <h3>Serwis automatyki bram wjazdowych</h3>
+        <p>Naprawy napędów przesuwnych i skrzydłowych, wymiana pilotów, fotokomórek i sterowników. Naprawy po burzy i przepięciach.</p>
+      </div>
+
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+        <h3>Konserwacja i przeglądy</h3>
+        <p>Przegląd, smarowanie, regulacja siły i krańców pracy — przedłuż żywotność napędu i zmniejsz ryzyko awarii.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -507,12 +623,12 @@ footer .fbrand svg { height:28px; width:auto; }
   </div>
 </section>
 
-<!-- COVER -->
+<!-- COVER / BRANDS -->
 <section class="cover" id="marki">
   <div class="wrap">
     <div class="sec-label">Co obsługuję</div>
     <div class="pill-row">
-      <span class="pill">Nice</span><span class="pill">Came</span><span class="pill">FAAC</span><span class="pill">BFT</span><span class="pill">Benincà</span>
+      <span class="pill">Nice</span><span class="pill">Came</span><span class="pill">FAAC</span><span class="pill">BFT</span><span class="pill">Benincà</span><span class="pill">Somfy</span><span class="pill">Hörmann</span><span class="pill">Wiśniowski</span>
     </div>
     <p class="types">Typy bram: <b>przesuwne</b> · <b>skrzydłowe</b> · <b>garażowe</b> · <b>szlabany</b> &nbsp;|&nbsp; Dodatkowo: <b>domofony</b> · <b>kamery CCTV</b></p>
   </div>
@@ -537,7 +653,7 @@ footer .fbrand svg { height:28px; width:auto; }
   <div class="wrap">
     <div class="sec-label">Obszar działania</div>
     <h2 class="sec-title">Rzeszów i okolice</h2>
-    <p style="color:var(--muted);max-width:560px">Dojeżdżam do klientów w Rzeszowie i okolicznych miejscowościach. Nie ma Twojej miejscowości na liście? Zadzwoń — ustalimy.</p>
+    <p style="color:var(--muted);max-width:620px;margin-bottom:18px;">Dojeżdżamy do klientów w Rzeszowie oraz w Boguchwale, Tyczynie, Głogowie Małopolskim, Trzebownisku, Świlczy, Krasnem, Łańcucie, Czarnej, Chmielniku, Błażowej i Sokołowie Małopolskim. Nie ma Twojej miejscowości na liście? Zadzwoń — ustalimy.</p>
     <div class="area-tags">
       <span>Rzeszów</span><span>Boguchwała</span><span>Tyczyn</span><span>Głogów Małopolski</span><span>Trzebownisko</span><span>Świlcza</span><span>Krasne</span><span>Łańcut</span><span>Czarna</span><span>Chmielnik</span><span>Błażowa</span><span>Sokołów Małopolski</span>
     </div>
@@ -545,6 +661,72 @@ footer .fbrand svg { height:28px; width:auto; }
 </section>
 
 <div class="hazard"></div>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-label">Często zadawane pytania</div>
+    <h2 class="sec-title">FAQ</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">Czy naprawiacie bramy garażowe różnych producentów?</div>
+        <div class="faq-a">Tak — serwisujemy bramy garażowe segmentowe i uchylne wielu marek, m.in. Hörmann, Wiśniowski i inne. Zakres naprawy ustalamy po oględzinach na miejscu u klienta.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Co zrobić, gdy w bramie garażowej pękła sprężyna?</div>
+        <div class="faq-a">Nie używaj bramy i nie próbuj samodzielnie naprawiać sprężyny — jest pod bardzo dużym naprężeniem i grozi poważnym urazem. Zadzwoń do nas, przyjedziemy i bezpiecznie wymienimy sprężynę.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Czy można podłączyć domofon do otwierania bramy i furtki?</div>
+        <div class="faq-a">Tak, większość nowoczesnych domofonów przewodowych i bezprzewodowych obsługuje jednoczesne sterowanie bramą wjazdową i furtką. Dobieramy odpowiedni elektrozaczep i podłączamy go w ramach montażu.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Czy kamery można oglądać w telefonie?</div>
+        <div class="faq-a">Tak — instalujemy kamery IP z dostępem przez aplikację mobilną, który działa zarówno w sieci domowej, jak i przez internet z dowolnego miejsca.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Ile kosztuje diagnostyka / dojazd?</div>
+        <div class="faq-a">[DO UZUPEŁNIENIA: cena dojazdu lub „wycena przed rozpoczęciem pracy — koszt podajemy na miejscu po oględzinach"]</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Jaki obszar obsługujecie?</div>
+        <div class="faq-a">Obsługujemy Rzeszów oraz okoliczne miejscowości: Boguchwałę, Tyczyn, Głogów Małopolski, Trzebownisko, Świlczę, Krasne, Łańcut, Czarną, Chmielnik, Błażową i Sokołów Małopolski.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Czy naprawiacie po gwarancji?</div>
+        <div class="faq-a">Tak — prowadzimy niezależny serwis pogwarancyjny. Nie jesteśmy powiązani z żadnym producentem, co oznacza, że naprawiamy bramy i napędy niezależnie od marki i okresu gwarancji.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block" id="opinie">
+  <div class="wrap">
+    <div class="sec-label">Opinie klientów</div>
+    <h2 class="sec-title">Co mówią klienci</h2>
+    <div class="reviews-box">
+      <p>[DO UZUPEŁNIENIA: 2–3 prawdziwe opinie z Google — dodaj cytaty po uzyskaniu zgody klientów lub skopiuj z profilu Google Moja Firma]</p>
+      <div class="reviews-btns">
+        <a class="btn-outline" href="[DO UZUPEŁNIENIA: link do profilu Google Moja Firma]" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Zobacz opinie w Google
+        </a>
+        <a class="btn-outline" href="[DO UZUPEŁNIENIA: link do wystawiania opinii w Google]" target="_blank" rel="noopener">
+          Wystaw opinię
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact" id="kontakt">
@@ -581,7 +763,7 @@ footer .fbrand svg { height:28px; width:auto; }
       </span>
       <span>Telefon: <span class="ph">[ 513 960 096 ]</span></span>
     </div>
-    <p>Nazwy Nice, Came, FAAC, BFT i Benincà są znakami towarowymi ich właścicieli. Serwis niezależny, niepowiązany z producentami — wykonuje naprawy pogwarancyjne.</p>
+    <p>Nazwy Nice, Came, FAAC, BFT, Benincà, Somfy, Hörmann i Wiśniowski są znakami towarowymi ich właścicieli. Serwis niezależny, niepowiązany z producentami — wykonuje naprawy pogwarancyjne.</p>
   </div>
 </footer>
 
@@ -590,6 +772,63 @@ footer .fbrand svg { height:28px; width:auto; }
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
   Zadzwoń: 513 960 096
 </a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Czy naprawiacie bramy garażowe różnych producentów?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak — serwisujemy bramy garażowe segmentowe i uchylne wielu marek, m.in. Hörmann, Wiśniowski i inne. Zakres naprawy ustalamy po oględzinach na miejscu u klienta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co zrobić, gdy w bramie garażowej pękła sprężyna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nie używaj bramy i nie próbuj samodzielnie naprawiać sprężyny — jest pod bardzo dużym naprężeniem i grozi poważnym urazem. Zadzwoń, przyjedziemy i bezpiecznie wymienimy sprężynę."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy można podłączyć domofon do otwierania bramy i furtki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak, większość nowoczesnych domofonów przewodowych i bezprzewodowych obsługuje jednoczesne sterowanie bramą wjazdową i furtką. Dobieramy odpowiedni elektrozaczep i podłączamy go w ramach montażu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy kamery można oglądać w telefonie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak — instalujemy kamery IP z dostępem przez aplikację mobilną, który działa zarówno w sieci domowej, jak i przez internet z dowolnego miejsca."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jaki obszar obsługujecie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Obsługujemy Rzeszów oraz okoliczne miejscowości: Boguchwałę, Tyczyn, Głogów Małopolski, Trzebownisko, Świlczę, Krasne, Łańcut, Czarną, Chmielnik, Błażową i Sokołów Małopolski."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy naprawiacie po gwarancji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak — prowadzimy niezależny serwis pogwarancyjny. Nie jesteśmy powiązani z żadnym producentem, co oznacza, że naprawiamy bramy i napędy niezależnie od marki i okresu gwarancji."
+      }
+    }
+  ]
+}
+</script>
 
 <script>
 const canvas = document.getElementById('gate-shadow');
@@ -631,6 +870,14 @@ function tick(now) {
   if (progress < 1) requestAnimationFrame(tick);
 }
 requestAnimationFrame(tick);
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    item.classList.toggle('open');
+  });
+});
 </script>
 </body>
 </html>
