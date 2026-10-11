@@ -724,15 +724,47 @@ footer .fbrand svg { height:28px; width:auto; }
   <div class="wrap">
     <div class="sec-label">Opinie klientów</div>
     <h2 class="sec-title">Co mówią klienci</h2>
-    <div id="reviews-container" class="reviews-grid">
-      <p class="reviews-loading">Ładowanie opinii…</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar-fallback">K</div>
+          <div class="review-meta">
+            <div class="review-author">Klient Google</div>
+            <div class="review-stars"><span style="color:#f59e0b">★★★★★</span></div>
+            <div class="review-time">miesiąc temu</div>
+          </div>
+        </div>
+        <div class="review-text">Bardzo profesjonalne usługi, duże doświadczenie i miłe podejście do klienta. Polecam.</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar-fallback">T</div>
+          <div class="review-meta">
+            <div class="review-author">Tomasz Dębiński</div>
+            <div class="review-stars"><span style="color:#f59e0b">★★★★★</span></div>
+            <div class="review-time">2 miesiące temu</div>
+          </div>
+        </div>
+        <div class="review-text">Polecam firmę. Rzeczowo i sprawnie rozwiązany problem z bramą ;)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar-fallback">D</div>
+          <div class="review-meta">
+            <div class="review-author">Daniel Chomka</div>
+            <div class="review-stars"><span style="color:#f59e0b">★★★★★</span></div>
+            <div class="review-time">2 miesiące temu</div>
+          </div>
+        </div>
+        <div class="review-text">Fachowiec który walczy do końca, nie poddaje się. Polecam</div>
+      </div>
     </div>
     <div class="reviews-btns">
-      <a class="btn-outline" id="google-profile-link" href="#" target="_blank" rel="noopener">
+      <a class="btn-outline" href="https://www.google.com/maps?cid=16666462416385643510" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         Zobacz opinie w Google
       </a>
-      <a class="btn-outline" id="google-review-link" href="#" target="_blank" rel="noopener">
+      <a class="btn-outline" href="https://search.google.com/local/writereview?cid=16666462416385643510" target="_blank" rel="noopener">
         Wystaw opinię
       </a>
     </div>
@@ -891,65 +923,5 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 </script>
 
-<!-- Google Places reviews
-     Uzupełnij: GOOGLE_MAPS_API_KEY (Maps JavaScript API + Places API włączone w Google Cloud)
-                PLACE_ID (znajdziesz na maps.google.com → prawy klik na firmę → "Kopiuj ID miejsca")
-                GOOGLE_PROFILE_URL i GOOGLE_REVIEW_URL z panelu Google Moja Firma -->
-<script>
-(function(){
-  var PLACE_ID          = '[PLACE_ID]';
-  var GOOGLE_PROFILE_URL = '[DO UZUPEŁNIENIA: link do profilu Google Moja Firma]';
-  var GOOGLE_REVIEW_URL  = '[DO UZUPEŁNIENIA: link do wystawiania opinii]';
-
-  document.getElementById('google-profile-link').href = GOOGLE_PROFILE_URL;
-  document.getElementById('google-review-link').href  = GOOGLE_REVIEW_URL;
-
-  if (PLACE_ID === '[PLACE_ID]') {
-    document.getElementById('reviews-container').innerHTML =
-      '<p class="reviews-loading">[DO UZUPEŁNIENIA: wstaw PLACE_ID i GOOGLE_MAPS_API_KEY aby załadować opinie z Google]</p>';
-    return;
-  }
-
-  window._initGoogleReviews = function() {
-    var dummy = document.createElement('div');
-    var svc = new google.maps.places.PlacesService(dummy);
-    svc.getDetails({ placeId: PLACE_ID, fields: ['reviews','url'] }, function(place, status) {
-      var container = document.getElementById('reviews-container');
-      if (status !== google.maps.places.PlacesServiceStatus.OK || !place || !place.reviews || !place.reviews.length) {
-        container.innerHTML = '<p class="reviews-loading">Nie udało się załadować opinii.</p>';
-        return;
-      }
-      if (place.url) {
-        document.getElementById('google-profile-link').href = place.url;
-      }
-      var stars = function(n) {
-        return '<span style="color:#f59e0b">' + '★'.repeat(n) + '</span>' +
-               '<span style="color:#d1d5db">' + '★'.repeat(5 - n) + '</span>';
-      };
-      container.innerHTML = place.reviews.slice(0, 3).map(function(r) {
-        var initial = r.author_name ? r.author_name.charAt(0).toUpperCase() : '?';
-        var avatar = r.profile_photo_url
-          ? '<img class="review-avatar" src="' + r.profile_photo_url + '" alt="' + r.author_name + '" width="38" height="38" loading="lazy">'
-          : '<div class="review-avatar-fallback">' + initial + '</div>';
-        return '<div class="review-card">' +
-          '<div class="review-header">' + avatar +
-            '<div class="review-meta">' +
-              '<div class="review-author">' + r.author_name + '</div>' +
-              '<div class="review-stars">' + stars(r.rating) + '</div>' +
-              '<div class="review-time">' + r.relative_time_description + '</div>' +
-            '</div>' +
-          '</div>' +
-          (r.text ? '<div class="review-text">' + r.text + '</div>' : '') +
-        '</div>';
-      }).join('');
-    });
-  };
-
-  var script = document.createElement('script');
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=[GOOGLE_MAPS_API_KEY]&libraries=places&callback=_initGoogleReviews';
-  script.async = true; script.defer = true;
-  document.body.appendChild(script);
-})();
-</script>
 </body>
 </html>
