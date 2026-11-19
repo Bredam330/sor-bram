@@ -21,13 +21,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- Google Ads — uzupełnij [AW-ID] i [ETYKIETA] w panelu Google Ads (Cele → Konwersje) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=[AW-ID]"></script>
+<!-- Tag Google (Google Ads). Konwersja kliknięcia w telefon: uzupełnij [AW-ID]/[ETYKIETA] -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T7Q33V7G"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '[AW-ID]');
   document.addEventListener('click', function(e){
     var a = e.target.closest('a[href^="tel:"]');
     if (a) gtag('event', 'conversion', {'send_to': '[AW-ID]/[ETYKIETA]'});
